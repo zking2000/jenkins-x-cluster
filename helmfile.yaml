@@ -1,0 +1,24 @@
+filepath: ""
+environments:
+  default:
+    values:
+    - jx-values.yaml
+repositories:
+- name: jx3
+  url: https://jenkins-x-charts.github.io/repo
+- name: jenkins-x
+  url: https://storage.googleapis.com/chartmuseum.jenkins-x.io
+- name: bitnami
+  url: https://charts.bitnami.com/bitnami
+- name: external-secrets
+  url: https://external-secrets.github.io/kubernetes-external-secrets
+releases:
+- chart: jx3/jenkins-x-crds
+- chart: jx3/jx-pipelines-visualizer
+- chart: jx3/jx-preview
+- chart: jenkins-x/lighthouse
+- chart: jenkins-x/bucketrepo
+- chart: jx3/jx-build-controller
+- chart: jx3/jx-pipelines-visualizer
+templates: {}
+renderedvalues: {}

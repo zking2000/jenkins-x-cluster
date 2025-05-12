@@ -1,0 +1,37 @@
+apiVersion: core.jenkins-x.io/v4beta1
+kind: Requirements
+spec:
+  autoUpdate:
+    enabled: false
+    schedule: ""
+  cluster:
+    chartRepository: http://bucketrepo.jx.svc.cluster.local/bucketrepo/charts
+    clusterName: "jenkinsx-cluster"
+    devEnvApprovers:
+    - "zking2000"
+    environmentGitOwner: "zking2000"
+    gitKind: github
+    gitName: github
+    gitServer: https://github.com
+    provider: gke
+    project: "coral-pipe-457011-d2"
+    registry: gcr.io
+    zone: "europe-west2-a"
+  environments:
+  - key: dev
+    owner: "zking2000"
+    repository: "jenkins-x-cluster"
+  - key: staging
+  - key: production
+  ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  repository: bucketrepo
+  secretStorage: local
+  vault: {}
+  webhook: lighthouse
